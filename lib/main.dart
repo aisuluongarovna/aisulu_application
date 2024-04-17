@@ -16,11 +16,12 @@ class CounterWidget extends StatefulWidget {
   _CounterWidgetState createState() => _CounterWidgetState();
 }
 
+//main bodydin kodi
 class _CounterWidgetState extends State<CounterWidget> {
-  int _count = 50;
+  int _count = 0; //int integers
   @override
   void initState() {
-    _count = 50;
+    _count = 0;
     super.initState();
   }
 
@@ -29,9 +30,12 @@ class _CounterWidgetState extends State<CounterWidget> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Counter'),
+          title: Text(
+            'Counter',
+            style: TextStyle(fontSize: 27, color: Colors.white),
+          ),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Color.fromARGB(255, 135, 67, 89),
         ),
         body: Center(
           child: Container(
@@ -40,17 +44,19 @@ class _CounterWidgetState extends State<CounterWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Tap - to decrement',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    'Tap "-" to decrement',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 236, 0, 83),
+                        fontSize: 19),
                   ),
                   Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         IconButton(
-                          icon: const Icon(Icons.add_circle),
-                          color: Colors.indigo,
-                          iconSize: 40,
+                          icon: const Icon(Icons.add_circle_outline_outlined),
+                          color: Color.fromARGB(255, 135, 67, 89),
+                          iconSize: 45,
                           onPressed: () {
                             setState(() {
                               _count++;
@@ -61,15 +67,17 @@ class _CounterWidgetState extends State<CounterWidget> {
                           "$_count",
                           style: TextStyle(
                             fontSize: 45,
-                            color: Colors.blue,
+                            color: const Color.fromARGB(255, 135, 67, 89),
                           ),
                         ),
                         IconButton(
-                          icon: const Icon(Icons.remove_circle),
-                          color: Colors.indigo,
-                          iconSize: 40,
+                          icon:
+                              const Icon(Icons.remove_circle_outline_outlined),
+                          color: Color.fromARGB(255, 135, 67, 89),
+                          iconSize: 45,
                           onPressed: () {
                             setState(() {
+                              //setStatetin Stateful widget sostoianiasin ozgertet
                               _count--;
                             });
                           },
@@ -78,8 +86,9 @@ class _CounterWidgetState extends State<CounterWidget> {
                     ),
                   ),
                   Text(
-                    'Tap + to increment',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    'Tap "+"to increment',
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 236, 0, 83), fontSize: 19),
                   )
                 ],
               )),
